@@ -62,5 +62,10 @@ rootpw --iscrypted --allow-ssh $6$fypfDGbjE8cEarp1$WSdslt2rk9ZWjrfqPxgKo2S53E.tD
 
 # added post script line
 %post
-curl http://10.0.2.69/sqlserverscript.sh | /bin/bash
+#curl http://10.0.2.69/sqlserverscript.sh | /bin/bash
+curl -sk https://raw.githubusercontent.com/RTFMorGTFO/kickstart/main/sqlserver.conf > /tmp/server.conf
+curl -sk https://raw.githubusercontent.com/RTFMorGTFO/kickstart/main/library.f > /tmp/library.f
+curl -sk https://raw.githubusercontent.com/RTFMorGTFO/kickstart/main/server_installer.sh > /tmp/server_installer.sh
+chmod +x /tmp/server_installer.sh
+/tmp/server_installer.sh
 %end

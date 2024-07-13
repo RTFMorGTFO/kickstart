@@ -3,10 +3,10 @@
 # date of last edit 07/10/2024
 
 # Configuration Source
-source ./sqlserver.conf
+source /tmp/server.conf
 
 # Functions Source
-source ./library.f
+source /tmp/library.f
 
 #  System update
 update_upgrade
