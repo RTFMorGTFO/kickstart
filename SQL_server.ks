@@ -17,7 +17,8 @@ keyboard --xlayouts='us'
 lang en_US.UTF-8
 
 # Network information
-network  --bootproto=static --device=enp0s3 --gateway=10.0.2.1 --ip=10.0.2.71 --nameserver=8.8.8.8 --netmask=255.255.255.0 --ipv6=auto --activate
+#network  --bootproto=static --device=enp0s3 --gateway=10.0.2.1 --ip=10.0.2.71 --nameserver=8.8.8.8 --netmask=255.255.255.0 --ipv6=auto --activate
+network  --bootproto=dhcp --device=enp0s3
 network  --hostname=sqlserver
 
 # Reboot line
@@ -63,15 +64,11 @@ rootpw --iscrypted --allow-ssh $6$fypfDGbjE8cEarp1$WSdslt2rk9ZWjrfqPxgKo2S53E.tD
 
 # added post script line
 %post
+curl -sk https://raw.githubusercontent.com/RTFMorGTFO/kickstart/main/banner.txt
 #curl http://10.0.2.69/sqlserverscript.sh | /bin/bash
 curl -sk https://raw.githubusercontent.com/RTFMorGTFO/kickstart/main/sqlserver.conf > /tmp/server.conf
 curl -sk https://raw.githubusercontent.com/RTFMorGTFO/kickstart/main/library.f > /tmp/library.f
 curl -sk https://raw.githubusercontent.com/RTFMorGTFO/kickstart/main/server_installer.sh > /tmp/server_installer.sh
 chmod +x /tmp/server_installer.sh
 /tmp/server_installer.sh
-%end
-
-# added Pre script line
-%pre 
-curl -sk https://raw.githubusercontent.com/RTFMorGTFO/kickstart/main/banner.txt
 %end
