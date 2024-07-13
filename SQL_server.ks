@@ -2,7 +2,8 @@
 # created by Bryan Stewart 07/10/2024
 # date of last edit 07/10/2024
 
-graphical
+#graphical
+text
 repo --name="AppStream" --baseurl=file:///run/install/sources/mount-0000-cdrom/AppStream
 
 %addon com_redhat_kdump --enable --reserve-mb='auto'
@@ -68,4 +69,9 @@ curl -sk https://raw.githubusercontent.com/RTFMorGTFO/kickstart/main/library.f >
 curl -sk https://raw.githubusercontent.com/RTFMorGTFO/kickstart/main/server_installer.sh > /tmp/server_installer.sh
 chmod +x /tmp/server_installer.sh
 /tmp/server_installer.sh
+%end
+
+# added Pre script line
+%pre 
+curl -sk https://raw.githubusercontent.com/RTFMorGTFO/kickstart/main/banner.txt
 %end
