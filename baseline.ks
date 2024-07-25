@@ -3,6 +3,8 @@
 #version=OL9
 # Use graphical install
 graphical
+reboot
+eject
 repo --name="AppStream" --baseurl=file:///run/install/sources/mount-0000-cdrom/AppStream
 
 %addon com_redhat_kdump --enable --reserve-mb='auto'
