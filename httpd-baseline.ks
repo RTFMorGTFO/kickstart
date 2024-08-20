@@ -10,7 +10,21 @@ repo --name="AppStream" --baseurl=file:///run/install/sources/mount-0000-cdrom/A
 
 %end
 
+##### pre ####
 
+%pre
+  curl -sk https://raw.githubusercontent.com/RTFMorGTFO/kickstart/main/banner.txt
+
+%end
+
+###### post #####
+
+%post
+
+  curl -sk https://raw.githubusercontent.com/RTFMorGTFO/kickstart/main/update.sh | /bin/bash
+  curl -sk https://raw.githubusercontent.com/RTFMorGTFO/kickstart/main/httpd.sh  | /bin/bash
+
+%end
 
 # Keyboard layouts
 keyboard --xlayouts='us'
