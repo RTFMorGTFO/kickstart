@@ -16,8 +16,7 @@ repo --name="AppStream" --baseurl=file:///run/install/sources/mount-0000-cdrom/A
   exec < /dev/tty6 > /dev/tty6
   chvt 6
 
-  curl -sk https://raw.githubusercontent.com/RTFMorGTFO/kickstart/main/banner/banner.txt
-  
+  curl -sk https://raw.githubusercontent.com/RTFMorGTFO/kickstart/main/banner/banner.txtro
   chvt 1
 %end
 
@@ -42,8 +41,8 @@ services:
     hostname: bsweb
     image: bstewart1992/bsweb:0.6
     ports:
-      - target: 8080
-        published: 80
+      - target: 80
+        published: 8080
         protocol: tcp
     restart: always
 
