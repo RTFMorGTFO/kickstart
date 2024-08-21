@@ -76,7 +76,7 @@ services:
     volumes:
       - "/vol/var/www/html3:/var/www/html:Z"
   
-   bsweb4:
+  bsweb4:
     container_name: bsweb4
       
     hostname: bsweb4
