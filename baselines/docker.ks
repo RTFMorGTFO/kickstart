@@ -31,7 +31,7 @@ repo --name="AppStream" --baseurl=file:///run/install/sources/mount-0000-cdrom/A
   curl -sk https://raw.githubusercontent.com/927technology/kickstart/main/distro/el/post/docker.sh | /bin/bash
   
   mkdir -p /etc/bsweb
-   
+
 cat << EOF-compose > /etc/bsweb/docker-compose.yml
 name: bsweb
 
@@ -39,13 +39,13 @@ services:
   bsweb:
     container_name: bsweb
       
-  hostname: bsweb
-  image: bstewart1992/bsweb:0.6
-  ports:
-    - target: 8080
-      published: 80
-      protocol: tcp
-  restart: always
+    hostname: bsweb
+    image: bstewart1992/bsweb:0.6
+    ports:
+      - target: 8080
+        published: 80
+        protocol: tcp
+    restart: always
 
 EOF-compose
 
