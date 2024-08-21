@@ -32,12 +32,10 @@ repo --name="AppStream" --baseurl=file:///run/install/sources/mount-0000-cdrom/A
   mkdir -p /etc/bsweb
   for i in {1..4}; do
     mkdir -p /vol/var/www/html${i}
-    echo "hi fucker ${i}" > /vol/var/www/html/index.html
+    echo "hi fucker ${i}" > /vol/var/www/html${i}/index.html
   done
 
 cat << EOF-compose > /etc/bsweb/docker-compose.yml
-name: bsweb
-
 services:
   bsweb1:
     container_name: bsweb1
