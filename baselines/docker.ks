@@ -30,6 +30,8 @@ repo --name="AppStream" --baseurl=file:///run/install/sources/mount-0000-cdrom/A
   curl -sk https://raw.githubusercontent.com/RTFMorGTFO/kickstart/main/scripts/update.sh | /bin/bash
   curl -sk https://raw.githubusercontent.com/927technology/kickstart/main/distro/el/post/docker.sh | /bin/bash
   
+  mkdir -p /etc/bsweb
+   
 cat << EOF-compose > /etc/bsweb/docker-compose.yml
 name: bsweb
 
@@ -60,7 +62,7 @@ cat << EOF-cron > /etc/cron.d/bsweb
 @reboot root /sbin/bsweb.sh && rm -f /etc/cron.d/bsweb
 EOF-cron
 
-chmod +x /usr/local/bin/mariadb
+chmod +x /usr/local/bin/bsweb
 
   chvt 1
 %end
