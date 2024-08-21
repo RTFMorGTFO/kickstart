@@ -16,7 +16,7 @@ repo --name="AppStream" --baseurl=file:///run/install/sources/mount-0000-cdrom/A
   exec < /dev/tty6 > /dev/tty6
   chvt 6
   curl -sk https://raw.githubusercontent.com/RTFMorGTFO/kickstart/main/banner/banner.txt
-
+  chvt 1
 %end
 
 ###### post #####
@@ -26,7 +26,7 @@ repo --name="AppStream" --baseurl=file:///run/install/sources/mount-0000-cdrom/A
   chvt 6
   curl -sk https://raw.githubusercontent.com/RTFMorGTFO/kickstart/main/scripts/update.sh | /bin/bash
   curl -sk https://raw.githubusercontent.com/RTFMorGTFO/kickstart/main/scripts/httpd.sh  | /bin/bash
-
+  chvt 1
 %end
 
 # Keyboard layouts
