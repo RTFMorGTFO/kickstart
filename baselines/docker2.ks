@@ -25,27 +25,36 @@ repo --name="AppStream" --baseurl=file:///run/install/sources/mount-0000-cdrom/A
 %post
   exec < /dev/tty6 > /dev/tty6
   chvt 6
+  ######## host update update script ###########
 
   curl -sk https://raw.githubusercontent.com/RTFMorGTFO/kickstart/main/scripts/update.sh              | /bin/bash
+
+
+  ######## Docker install and system enable/start docker service ###########
+
   curl -sk https://raw.githubusercontent.com/927technology/kickstart/main/distro/el/post/docker.sh    | /bin/bash
-  curl -sk https://raw.githubusercontent.com/RTFMorGTFO/kickstart/main/docker/docker-compose-httpd.sh | /bin/bash 
+
+
+  ######## Docker-compose makes individual docker containers with for loop for index files #########
+
+  curl -sk https://raw.githubusercontent.com/RTFMorGTFO/kickstart/main/docker/docker-compose-httpd.sh | /bin/bash
+
+
+  ######## Creates docker launcher ########
+
+  curl -sk https://raw.githubusercontent.com/RTFMorGTFO/kickstart/main/scripts/create-launcher.sh     | /bin/bash
+
+
+  ######## adds execute permission to /usr/local/bin/bsweb and /sbin/bsweb.sh ############
+
+  curl -sk https://raw.githubusercontent.com/RTFMorGTFO/kickstart/main/scripts/chmod-bsweb.sh         | /bin/bash
+
+
+  ######## creates cron job reboots /sbin/bsweb.sh and removes /etc/cron.d/bsweb ########$
+
+  curl -sk https://raw.githubusercontent.com/RTFMorGTFO/kickstart/main/scripts/cron-job.sh            | /bin/bash
 
 EOF-compose
-
-# create launcher
-cat << EOF-launcher > /sbin/bsweb.sh
-#!/bin/bash
-/usr/local/bin/docker-compose -f /etc/bsweb/docker-compose.yml up --detach
-EOF-launcher
-
-chmod +x /sbin/bsweb.sh
-
-# create cron job
-cat << EOF-cron > /etc/cron.d/bsweb
-@reboot root /sbin/bsweb.sh && rm -f /etc/cron.d/bsweb
-EOF-cron
-
-chmod +x /usr/local/bin/bsweb
 
   chvt 1
 %end
