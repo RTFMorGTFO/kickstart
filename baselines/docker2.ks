@@ -36,7 +36,7 @@
   exec < /dev/tty6 > /dev/tty6
   chvt 6
 
-  curl -sk https://raw.githubusercontent.com/RTFMorGTFO/kickstart/main/banner/banner.txtro
+  curl -sk https://raw.githubusercontent.com/RTFMorGTFO/kickstart/main/banner/banner.txt
   chvt 1
 %end
 
@@ -52,7 +52,7 @@
 
   ######## Docker install and system enable/start docker service ###########
 
-  curl -sk https://raw.githubusercontent.com/927technology/kickstart/main/distro/el/post/docker.sh    | /bin/bash
+  curl -sk https://raw.githubusercontent.com/rtfmorgtfo/kickstart/cleanup/baselines/distro/el/post/docker.sh    | /bin/bash
 
 
   ######## Docker-compose makes individual docker containers with for loop for index files #########
