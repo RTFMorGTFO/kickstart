@@ -1,7 +1,7 @@
 #### change to text output and reboot ####
 
 text
-#reboot --eject
+reboot --eject
 
 #### Use CDROM installation media
 
