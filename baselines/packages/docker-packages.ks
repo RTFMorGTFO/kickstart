@@ -1,0 +1,4 @@
+##### Docker packages ####
+
+@^minimal-environment
+
