@@ -47,7 +47,7 @@
   chvt 6
   ######## host update update script ###########
 
-  curl -sk https://raw.githubusercontent.com/RTFMorGTFO/kickstart/main/scripts/update.sh              | /bin/bash
+  #curl -sk https://raw.githubusercontent.com/RTFMorGTFO/kickstart/main/scripts/update.sh              | /bin/bash
 
 
   ######## Docker install and system enable/start docker service ###########
