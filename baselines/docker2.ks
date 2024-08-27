@@ -24,7 +24,8 @@
 
 %packages
 
-@^minimal-install
+#@^minimal-install
+@^server-product-environment
 
 %end
 
