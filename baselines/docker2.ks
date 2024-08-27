@@ -4,23 +4,23 @@
 
 ##### system install method ####
 
-%include https://raw.githubusercontent.com/rtfmorgtfo/kickstart/cleanup/baselines/installer.ks
+%include https://raw.githubusercontent.com/rtfmorgtfo/kickstart/main/baselines/installer.ks
 
 ##### install repositories ####
 
-%include https://raw.githubusercontent.com/rtfmorgtfo/kickstart/cleanup/baselines/repos.ks
+%include https://raw.githubusercontent.com/rtfmorgtfo/kickstart/main/baselines/repos.ks
 
 ##### addon Kdump file ####
 
-%include https://raw.githubusercontent.com/rtfmorgtfo/kickstart/cleanup/baselines/kdump.ks
+%include https://raw.githubusercontent.com/rtfmorgtfo/kickstart/main/baselines/kdump.ks
 
 ##### networking information ####
 
-%include https://raw.githubusercontent.com/rtfmorgtfo/kickstart/cleanup/baselines/networking/webserver-02.ks
+%include https://raw.githubusercontent.com/rtfmorgtfo/kickstart/main/baselines/networking/webserver-02.ks
 
 ##### packages #####
 
-#%include https://raw.githubusercontent.com/rtfmorgtfo/kickstart/cleanup/baselines/packages/docker-packages.ks
+#%include https://raw.githubusercontent.com/rtfmorgtfo/kickstart/main/baselines/packages/docker-packages.ks
 
 %packages
 @^minimal-environment
@@ -29,11 +29,11 @@
 
 ##### password #####
 
-%include https://raw.githubusercontent.com/rtfmorgtfo/kickstart/cleanup/baselines/passwords/v1.ks
+%include https://raw.githubusercontent.com/rtfmorgtfo/kickstart/main/baselines/passwords/v1.ks
 
 ##### Timezone #####
 
-%include https://raw.githubusercontent.com/rtfmorgtfo/kickstart/cleanup/baselines/timezones/cst.ks
+%include https://raw.githubusercontent.com/rtfmorgtfo/kickstart/main/baselines/timezones/cst.ks
 
 ##### pre ####
 
@@ -57,7 +57,7 @@
 
   ######## Docker install and system enable/start docker service ###########
 
-  curl -sk https://raw.githubusercontent.com/rtfmorgtfo/kickstart/cleanup/baselines/distro/el/post/docker.sh    | /bin/bash
+  curl -sk https://raw.githubusercontent.com/rtfmorgtfo/kickstart/main/baselines/distro/el/post/docker.sh    | /bin/bash
 
 
   ######## Docker-compose makes individual docker containers with for loop for index files #########
