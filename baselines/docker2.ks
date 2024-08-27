@@ -25,6 +25,7 @@
 %packages
 
 @^minimal-install
+
 %end
 
 ##### password #####
