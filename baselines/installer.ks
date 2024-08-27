@@ -5,7 +5,7 @@ reboot --eject
 
 #### Use CDROM installation media
 
-#cdrom
+cdrom
 
 # Run the Setup Agent on first boot
 firstboot --enable
