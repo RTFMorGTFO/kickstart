@@ -4,7 +4,7 @@
 
 ##### system install method ####
 
-%include https://raw.githubusercontent.com/rtfmorgtfo/kickstart/main/baselines/installer.ks
+%include https://raw.githubusercontent.com/rtfmorgtfo/kickstart/cleanup/baselines/installer.ks
 
 ##### install repositories ####
 
