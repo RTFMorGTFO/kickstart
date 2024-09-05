@@ -22,7 +22,6 @@
 
 %packages
 @^minimal-environment
-#@^server-product-environment
 %end
 
 #%include https://raw.githubusercontent.com/rtfmorgtfo/kickstart/main/baselines/packages/docker-packages.ks
