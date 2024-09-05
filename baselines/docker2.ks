@@ -8,7 +8,7 @@
 
 ##### install repositories ####
 
-%include https://raw.githubusercontent.com/rtfmorgtfo/kickstart/main/baselines/repos.ks
+#%include https://raw.githubusercontent.com/rtfmorgtfo/kickstart/main/baselines/repos.ks
 
 ##### addon Kdump file ####
 
