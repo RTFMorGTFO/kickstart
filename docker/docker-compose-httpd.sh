@@ -3,7 +3,7 @@
 ##### make directory for each container######
 
 mkdir -p /etc/bsweb
-  for i in {1..4}; do
+  for i in {1..6}; do
     mkdir -p /vol/var/www/html${i}
     echo "hi fucker ${i}" > /vol/var/www/html${i}/index.html
   done
@@ -63,6 +63,32 @@ services:
     restart: always
     volumes:
       - "/vol/var/www/html4:/var/www/html:Z"
+
+   bsweb5:
+    container_name: bsweb5
+      
+    hostname: bsweb5
+    image: bstewart1992/bsweb:0.6
+    ports:
+      - target: 80
+        published: 8085
+        protocol: tcp
+    restart: always
+    volumes:
+      - "/vol/var/www/html5:/var/www/html:Z"
+
+   bsweb6:
+    container_name: bsweb6
+      
+    hostname: bsweb6
+    image: bstewart1992/bsweb:0.6
+    ports:
+      - target: 80
+        published: 8086
+        protocol: tcp
+    restart: always
+    volumes:
+      - "/vol/var/www/html6:/var/www/html:Z"        
   
 
 EOF-compose
