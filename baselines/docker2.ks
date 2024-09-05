@@ -4,7 +4,7 @@
 
 ##### system install method ####
 
-%include https://raw.githubusercontent.com/rtfmorgtfo/kickstart/cleanup/baselines/installer.ks
+%include https://raw.githubusercontent.com/rtfmorgtfo/kickstart/main/baselines/installer.ks
 
 ##### install repositories ####
 
@@ -20,7 +20,7 @@
 
 ##### packages #####
 
-%include https://raw.githubusercontent.com/rtfmorgtfo/kickstart/cleanup/baselines/packages/docker-packages.ks
+%include https://raw.githubusercontent.com/rtfmorgtfo/kickstart/main/baselines/packages/docker-packages.ks
 
 ##### password #####
 
