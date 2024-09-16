@@ -8,7 +8,7 @@
 
 ##### install repositories ####
 
-#%include https://raw.githubusercontent.com/rtfmorgtfo/kickstart/main/baselines/repos.ks
+%include https://raw.githubusercontent.com/rtfmorgtfo/kickstart/main/baselines/repos.ks
 
 ##### addon Kdump file ####
 
@@ -20,13 +20,13 @@
 
 ##### packages #####
 
-repo --name="AppStream" --baseurl=file:///run/install/sources/mount-0000-cdrom/AppStream
+#repo --name="AppStream" --baseurl=file:///run/install/sources/mount-0000-cdrom/AppStream
 
-%packages
-@^minimal-environment
-%end
+#%packages
+#@^minimal-environment
+#%end
 
-#%include https://raw.githubusercontent.com/rtfmorgtfo/kickstart/main/baselines/packages/docker-packages.ks
+%include https://raw.githubusercontent.com/rtfmorgtfo/kickstart/main/baselines/packages/docker-packages.ks
 
 ##### password #####
 
