@@ -8,11 +8,7 @@
 
 ##### install repositories ####
 
-%packages
-
 %include https://raw.githubusercontent.com/rtfmorgtfo/kickstart/main/baselines/repos.ks
-
-%end
 
 ##### addon Kdump file ####
 
@@ -24,7 +20,11 @@
 
 ##### packages #####
 
+%packages
+
 %include https://raw.githubusercontent.com/rtfmorgtfo/kickstart/main/baselines/packages/docker-packages.ks
+
+%end
 
 ##### password #####
 
