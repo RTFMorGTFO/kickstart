@@ -20,11 +20,7 @@
 
 ##### packages #####
 
-%packages
-
 %include https://raw.githubusercontent.com/rtfmorgtfo/kickstart/main/baselines/packages/docker-packages.ks
-
-%end
 
 ##### password #####
 

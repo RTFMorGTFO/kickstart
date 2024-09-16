@@ -1,5 +1,5 @@
 ##### Docker packages ####
-#%packages
+%packages
 #@^minimal-environment
 @^server-product-environment
-#%end
+%end
